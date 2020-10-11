@@ -24,3 +24,6 @@ Select Salary as SecondHighestSalary from (
 ) tmp
 
 */
+SELECT MAX(Salary) SecondHighestSalary
+FROM Employee e1
+WHERE (SELECT COUNT(DISTINCT Salary) FROM Employee e2 WHERE e2.Salary > e1.Salary) = 1;
