@@ -1,0 +1,29 @@
+class Solution {
+
+//brute force approch
+    public String longestPalindrome(String s) {
+        int start=0, end=0;
+        int length=0;
+        for(int i=0;i<s.length();i++){
+            for(int j=i;j<s.length();j++){
+                if(length<(j-i+1)&& isPalindrome(s, i, j) ){
+                    start=i;
+                    end=j;
+                    length=j-i+1;
+                }
+            }
+        }
+        return s.substring(start, end+1);
+    }
+    
+    private boolean isPalindrome(String s, int start, int end){
+         while(start<=end){
+             if(s.charAt(start)!=s.charAt(end))
+                 return false;
+             else{
+                 start++; end--;
+             }
+         }
+        return true;
+    }
+}
