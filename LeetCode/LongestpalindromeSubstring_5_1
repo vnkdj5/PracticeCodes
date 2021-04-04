@@ -26,4 +26,7 @@ class Solution {
          }
         return true;
     }
+    
+    // DP Approch: https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/
+    //Space efficient approch: https://www.geeksforgeeks.org/longest-palindromic-substring-set-2/
 }
