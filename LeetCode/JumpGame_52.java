@@ -18,7 +18,7 @@ class Solution {
     public boolean canJump2(int[] nums) {
         int lastGood=nums.length-1;
         for(int i=nums.length-2; i>=0; i--){
-            if(nums[i]>=lastGood-i){
+            if(nums[i]+i>=lastGood){
                 lastGood=i;
             }
                 
