@@ -14,11 +14,8 @@ import java.util.*;
  *     }
  * }
  */
-
-//Using stack approch
-
 class Solution {
-    public List<Integer> postorderTraversal(TreeNode root) {
+    public List<Integer> postorderTraversal_Stacks(TreeNode root) {
         List<Integer> list=new ArrayList<>();
         Stack<TreeNode> s1=new Stack<>();
         Stack<TreeNode> s2=new Stack<>();
@@ -40,4 +37,21 @@ class Solution {
         
         return list;
     }
+    
+     public List<Integer> postorderTraversal(TreeNode root) {
+         List<Integer> res=new ArrayList<>();
+         postOrder(root, res);
+         
+         return res;
+         
+     }
+    
+    private void postOrder(TreeNode node, List<Integer> res){
+        if(node==null)
+            return;
+        postOrder(node.left, res);
+        postOrder(node.right, res);
+        res.add(node.val);
+    }
+    
 }
