@@ -15,16 +15,15 @@
  */
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        return preOrder(p,q);
-    }
-    
-    private boolean preOrder(TreeNode p, TreeNode q){
-        if(p!=null && q!=null)
+       if(p!=null && q!=null)
         {
-          return  preOrder(p.left, q.left) && p.val==q.val && preOrder(p.right, q.right);
+          return  isSameTree(p.left, q.left) && p.val==q.val && isSameTree(p.right, q.right);
         }else if(p==null && q==null)
             return true;
         else
             return false;
     }
+    
+    
+    
 }
