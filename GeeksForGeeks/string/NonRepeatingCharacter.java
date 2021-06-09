@@ -49,5 +49,27 @@ class Solution
         
         return '$';
     }
+    
+     static char nonrepeatingCharacter1(String S)
+    {
+        
+        if(S==null||S.isEmpty())
+            return '$';
+        
+        HashMap<Character, Integer> hs=new HashMap<>(1<<5);
+        for(int i=0;i<S.length();i++){
+            if(hs.containsKey(S.charAt(i)))
+                hs.put(S.charAt(i), hs.get(S.charAt(i))+1);
+            else
+                hs.put(S.charAt(i),1);
+        }
+        
+        for(int i=0;i<S.length();i++){
+            if(hs.get(S.charAt(i))==1)
+                return S.charAt(i);
+        }
+        
+        return '$';
+    }
 }
 
