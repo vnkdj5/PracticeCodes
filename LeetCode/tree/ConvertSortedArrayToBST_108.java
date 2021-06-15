@@ -30,4 +30,41 @@ class Solution {
         return null;
        
     }
+    
+    
+    public TreeNode sortedArrayToBST_withStack(int[] nums) {
+        if(nums==null || nums.length==0)
+            return null;
+        Stack<Object> stack=new Stack<>();
+        int low=0, high=nums.length-1;
+        
+        TreeNode root=new TreeNode();
+        stack.push(high);
+        stack.push(low);
+        stack.push(root);
+        while(!stack.isEmpty()){
+            TreeNode node=(TreeNode) stack.pop();
+            low=(Integer)stack.pop();
+            high=(Integer)stack.pop();
+            int mid=(low+high)/2;
+            node.val=nums[mid];
+            if(low<=mid-1){
+                node.left=new TreeNode();
+                stack.push(mid-1);
+                stack.push(low);
+                stack.push(node.left);
+            }
+            
+            if(mid+1<=high){
+                node.right=new TreeNode();
+                stack.push(high);
+                stack.push(mid+1);
+                stack.push(node.right);
+            }
+            
+        }
+        
+        return root;
+        
+    }
 }
