@@ -2,7 +2,7 @@ class Solution {
     public String convert(String s, int numRows) {
         
         //Base case
-        if((s.length()<=1 && s.length()<=numRows)|| numRows==1)
+        if(s.length()<=numRows|| numRows==1)
             return s;
         
         StringBuffer sb[]=new StringBuffer[numRows];
