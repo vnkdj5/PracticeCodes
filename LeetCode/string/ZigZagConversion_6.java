@@ -30,4 +30,27 @@ class Solution {
         return sb[0].toString();
         
     }
+    
+    public String convert1(String s, int numRows) {
+        
+        //Base case
+        int len=s.length();
+        if(len<=numRows|| numRows==1)
+            return s;
+        
+        int interval=2*numRows-2;
+        StringBuffer result=new StringBuffer();
+        for(int i=0;i<numRows;i++){
+            for(int j=i;j<len;j+=interval){
+                result.append(s.charAt(j));
+                int k=j+interval-2*i; //Middle rows
+                if(i!=0 && i!=numRows-1 && k<len)
+                    result.append(s.charAt(k));
+            }
+        }
+        return result.toString();
+        
+        
+    }
+    
 }
