@@ -1,12 +1,14 @@
 #Kafka Links
 
+1. https://chrzaszcz.dev/2019/05/26/kafka-101/
+2. 
 //rebalacing
 https://medium.com/bakdata/solving-my-weird-kafka-rebalancing-problems-c05e99535435
 
-//basics and threading
+3. //basics and threading
 https://www.confluent.io/blog/kafka-consumer-multi-threaded-messaging/
 
-//poll time
+4. //poll time
  https://stackoverflow.com/questions/39730126/difference-between-session-timeout-ms-and-max-poll-interval-ms-for-kafka-0-10/39759329#39759329
 
 //timeout basics
