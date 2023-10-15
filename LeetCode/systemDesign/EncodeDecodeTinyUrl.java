@@ -7,7 +7,7 @@ Map<String, String> codeDB = new HashMap<>(), urlDB = new HashMap<>();
     private String getCode(){
         char[] code=new char[SHORT_URL_LENGTH];
         for(int i=0;i<SHORT_URL_LENGTH;i++){
-            code[i]=chars.charAt((int)Math.random()*62);
+            code[i]=chars.charAt((int)(Math.random()*62));
         }
         return BASE_DOMAIN+String.valueOf(code);
     }
