@@ -6,15 +6,18 @@ If we plot this as graph, we will first finf the mininum value with following ma
 
 */
     public int maxProfit(int[] prices) {
-        int minBuyPrice=Integer.MAX_VALUE;
-        int profit=0;
+        int buyPrice=Integer.MAX_VALUE;
+        int curProfit=0, maxProfit=0;
         for(int i=0;i<prices.length;i++){
-            if(prices[i]<minBuyPrice){
-                minBuyPrice=prices[i];
+            
+            if(prices[i]<buyPrice){
+                buyPrice=prices[i];
+                continue;
             }
-            if(prices[i]-minBuyPrice>profit)
-                profit=prices[i]-minBuyPrice;
+            curProfit=prices[i]-buyPrice;
+            maxProfit=Math.max(curProfit, maxProfit);
         }
-        return profit;
+        return maxProfit;
+
     }
 }
